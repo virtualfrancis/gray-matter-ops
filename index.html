@@ -3,168 +3,336 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Gray Matter Ops &middot; Team Contact</title>
-<meta name="description" content="Gray Matter Ops: the team behind X49, an opioid-free localized analgesic nanofiber. Duke Design Defense Studio 2026.">
+<title>Gray Matter Ops &middot; X49</title>
+<meta name="description" content="Gray Matter Ops: the Duke Design Defense Studio team behind X49, a localized, opioid-free nanofiber that controls pain at the wound for days.">
+
+<!-- social preview: this link gets texted and emailed around, so it has to preview well -->
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://virtualfrancis.github.io/gray-matter-ops/">
+<meta property="og:title" content="Gray Matter Ops &middot; X49">
+<meta property="og:description" content="Turning survival hours into days. A localized, opioid-free nanofiber that controls pain at the wound for days, keeping the wounded conscious, mobile, and survivable until evacuation.">
+<meta property="og:image" content="https://virtualfrancis.github.io/gray-matter-ops/assets/og.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+
+<link rel="icon" href="assets/icon-32.png" sizes="32x32">
+<link rel="apple-touch-icon" href="assets/icon-180.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600;700&family=IBM+Plex+Sans+Condensed:wght@600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
 <style>
-  /* palette + type carried over from the executive summary so the scanned page
-     reads as the same document the reader is holding */
+  /* Palette is derived from the logos rather than guessed. Sampling them puts Duke blue
+     at hue 225, the Gray Matter Ops navy at 210, and Viamer's globe across 156 to 200:
+     one blue family. So the field is a cool blue-grey that sits in that family, and the
+     accent is pulled from Viamer's teal. The printed exec summary keeps its warm paper
+     stock on purpose; a screen is not paper and should not pretend to be. */
   :root{
     --navy:#0B2545;
-    --navy-deep:#081A33;
-    --bone:#F2EFE7;
-    --paper:#FBFAF6;
-    --ink:#1A1A1A;
-    --ink-2:#3A434C;
-    --slate:#5C6770;
-    --line:#D8D3C8;
-    --line-2:#E6E2D8;
+    --navy-2:#102A43;
+    --navy-deep:#06121F;
+    --field:#E9EEF3;
+    --paper:#F8FAFC;
+    --ink:#131C26;
+    --ink-2:#374654;
+    --slate:#5D6B79;
+    --line:#C9D4DE;
+    --line-2:#DCE4EB;
+    --teal:#0F7A82;
     --mist:#9FB3C9;
     --sky:#CDD9E6;
 
-    --s1:4px; --s2:8px; --s3:12px; --s4:16px; --s5:24px; --s6:32px; --s7:48px;
+    --s1:4px; --s2:8px; --s3:12px; --s4:16px; --s5:24px; --s6:32px; --s7:48px; --s8:72px;
 
     --cond:"IBM Plex Sans Condensed","IBM Plex Sans",system-ui,sans-serif;
-    --sans:"IBM Plex Sans",system-ui,-apple-system,Segoe UI,Helvetica,Arial,sans-serif;
+    --sans:"IBM Plex Sans",system-ui,-apple-system,"Segoe UI",Helvetica,Arial,sans-serif;
     --mono:"IBM Plex Mono",ui-monospace,"SF Mono",Menlo,Consolas,monospace;
   }
   *{box-sizing:border-box;}
-  body{margin:0;background:var(--bone);color:var(--ink);font-family:var(--sans);
-    -webkit-font-smoothing:antialiased;}
+  body{margin:0;background:var(--field);color:var(--ink);font-family:var(--sans);
+    -webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility;}
+  img{max-width:100%;}
 
-  /* placeholder marker: deliberately off-palette so unfilled fields are impossible
-     to miss. delete .ph (and this rule) once the real details land. */
-  .ph{background:#FFF3BF;border-bottom:1px dashed #b59b00;padding:0 3px;border-radius:2px;}
+  /* unfilled fields are marked so they are impossible to ship by accident.
+     delete the <span class="ph"> wrappers and this rule once the real details land. */
+  .ph{background:#FFF3BF;border-bottom:1px dashed #b59b00;padding:0 3px;border-radius:2px;color:var(--ink);}
 
-  .wrap{max-width:56rem;margin:0 auto;padding:0 var(--s5);}
+  .wrap{max-width:60rem;margin:0 auto;padding:0 var(--s5);}
+  .eyebrow{font-family:var(--mono);font-size:.7rem;letter-spacing:.14em;text-transform:uppercase;
+    font-weight:600;color:var(--slate);}
 
-  /* ---------- masthead ---------- */
-  header{background:var(--navy);color:#fff;padding:var(--s5) 0;}
-  .head-in{display:flex;align-items:center;justify-content:space-between;gap:var(--s4);flex-wrap:wrap;}
-  .brand img{height:2.6rem;width:auto;display:block;}
-  .prog{font-family:var(--mono);font-size:.72rem;line-height:1.6;letter-spacing:.04em;
-    color:var(--sky);text-align:right;}
-  .prog b{color:#fff;font-weight:600;display:block;}
+  /* ---------- hero ---------- */
+  .hero{position:relative;background:var(--navy-deep);color:#fff;overflow:hidden;}
+  .hero img.bg{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center 40%;}
+  .hero .veil{position:absolute;inset:0;
+    background:linear-gradient(180deg,rgba(6,18,31,.62) 0%,rgba(6,18,31,.72) 45%,rgba(6,18,31,.94) 100%);}
+  /* set the vertical padding only. A `padding` shorthand here would zero out the horizontal
+     padding .wrap supplies, which is invisible on desktop (the 60rem max-width leaves margin
+     anyway) but slams the hero text flush against the edge of a phone screen. */
+  .hero .in{position:relative;padding-top:var(--s8);padding-bottom:var(--s7);}
+  .hero .eyebrow{color:var(--sky);}
+  .hero h1{font-family:var(--cond);font-weight:700;font-size:clamp(2.2rem,8vw,4rem);line-height:.98;
+    text-transform:uppercase;letter-spacing:-.01em;margin:var(--s4) 0 0;}
+  .hero p{max-width:34rem;margin:var(--s5) 0 0;font-size:1.02rem;line-height:1.65;color:var(--sky);}
+  .hero p b{color:#fff;font-weight:600;}
 
-  /* ---------- lede ---------- */
-  .lede{padding:var(--s7) 0 var(--s6);}
-  .eyebrow{font-family:var(--mono);font-size:.7rem;letter-spacing:.12em;text-transform:uppercase;
-    color:var(--slate);font-weight:600;}
-  h1{font-family:var(--cond);font-weight:700;font-size:clamp(2rem,7vw,3rem);line-height:1.02;
-    text-transform:uppercase;color:var(--navy);letter-spacing:-.01em;margin:var(--s3) 0 0;}
-  .lede p{max-width:40rem;margin:var(--s4) 0 0;font-size:1rem;line-height:1.6;color:var(--ink-2);}
+  /* ---------- actions ---------- */
+  .acts{display:grid;grid-template-columns:repeat(auto-fit,minmax(13rem,1fr));gap:var(--s3);
+    margin-top:var(--s7);}
+  .act{display:flex;align-items:center;gap:var(--s3);min-height:56px;padding:var(--s3) var(--s4);
+    border-radius:4px;text-decoration:none;border:1px solid rgba(205,217,230,.28);
+    background:rgba(255,255,255,.05);color:#fff;transition:background .15s,border-color .15s;}
+  .act:hover,.act:focus{background:var(--teal);border-color:var(--teal);}
+  .act.primary{background:#fff;color:var(--navy);border-color:#fff;}
+  .act.primary:hover,.act.primary:focus{background:var(--sky);border-color:var(--sky);}
+  .act .ico{flex:0 0 auto;width:22px;height:22px;}
+  .act .tx{font-family:var(--cond);font-weight:700;font-size:.95rem;text-transform:uppercase;
+    letter-spacing:.02em;line-height:1.2;}
+  .act .tx small{display:block;font-family:var(--mono);font-size:.62rem;font-weight:400;
+    letter-spacing:.06em;text-transform:uppercase;opacity:.72;margin-top:2px;}
+
+  /* ---------- sections ---------- */
+  section.band{padding:var(--s8) 0;}
+  section.band + section.band{border-top:1px solid var(--line);}
+  h2{font-family:var(--cond);font-weight:700;font-size:1.5rem;text-transform:uppercase;
+    color:var(--navy);margin:var(--s3) 0 0;letter-spacing:.01em;}
+  .sub{margin:var(--s3) 0 0;color:var(--ink-2);line-height:1.6;max-width:34rem;}
+
+  /* ---------- video ---------- */
+  .film{margin-top:var(--s6);border-radius:6px;overflow:hidden;background:var(--navy-deep);
+    aspect-ratio:16/9;position:relative;border:1px solid var(--line);}
+  .film video{width:100%;height:100%;object-fit:cover;display:block;}
+  /* placeholder state: shown until the cut MP4 is dropped in. To go live, replace this
+     whole .film-soon block with:
+       <video controls playsinline preload="none" poster="assets/film-poster.jpg">
+         <source src="assets/x49.mp4" type="video/mp4">
+       </video>
+     Commit the MP4 directly. Do NOT use Git LFS: GitHub Pages serves the LFS pointer
+     file instead of the video, and the player fails silently. */
+  .film-soon{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;
+    justify-content:center;gap:var(--s3);text-align:center;padding:var(--s5);}
+  .film-soon .ring{width:60px;height:60px;border-radius:50%;border:1.5px solid rgba(205,217,230,.4);
+    display:flex;align-items:center;justify-content:center;}
+  .film-soon .ring svg{width:20px;height:20px;margin-left:3px;}
+  .film-soon .lbl{font-family:var(--mono);font-size:.72rem;letter-spacing:.12em;text-transform:uppercase;
+    color:var(--mist);}
 
   /* ---------- team ---------- */
-  .sect{border-top:1px solid var(--line);padding:var(--s6) 0;}
-  h2{font-family:var(--cond);font-weight:700;font-size:1.25rem;text-transform:uppercase;
-    color:var(--navy);margin:0 0 var(--s5);letter-spacing:.01em;}
-
-  .team{display:grid;grid-template-columns:repeat(auto-fit,minmax(15rem,1fr));gap:var(--s4);
-    list-style:none;margin:0;padding:0;}
-  .card{background:var(--paper);border:1px solid var(--line-2);border-radius:4px;padding:var(--s5);
+  .crest{width:11rem;height:auto;display:block;}
+  .team{display:grid;grid-template-columns:repeat(auto-fit,minmax(13.5rem,1fr));gap:var(--s4);
+    list-style:none;margin:var(--s6) 0 0;padding:0;}
+  .card{background:var(--paper);border:1px solid var(--line-2);border-radius:5px;padding:var(--s5);
     display:flex;flex-direction:column;align-items:center;text-align:center;}
-  .face{width:5.5rem;height:5.5rem;border-radius:50%;overflow:hidden;background:var(--navy-deep);
+  .face{width:5.5rem;height:5.5rem;border-radius:50%;overflow:hidden;background:var(--navy);
     display:flex;align-items:center;justify-content:center;flex:0 0 auto;}
   .face img{width:100%;height:100%;object-fit:cover;display:block;}
-  /* placeholder avatar: initials on navy, no stock art, no AI faces */
-  .face .initials{font-family:var(--cond);font-weight:700;font-size:1.6rem;color:var(--mist);
-    letter-spacing:.02em;}
-  .card .nm{font-family:var(--cond);font-weight:700;font-size:1.15rem;text-transform:uppercase;
-    color:var(--navy);margin-top:var(--s4);letter-spacing:.01em;}
-  .card .role{font-family:var(--mono);font-size:.72rem;color:var(--slate);margin-top:var(--s1);
-    letter-spacing:.02em;line-height:1.5;}
-  /* 44px minimum tap target: this is the whole point of the page on a phone */
-  .card a.mail{display:flex;align-items:center;justify-content:center;min-height:44px;width:100%;
-    margin-top:var(--s4);padding:var(--s2) var(--s3);border:1px solid var(--line);border-radius:3px;
-    font-family:var(--mono);font-size:.75rem;color:var(--navy);text-decoration:none;
-    word-break:break-all;line-height:1.4;background:var(--bone);}
-  .card a.mail:hover,.card a.mail:focus{background:var(--navy);color:#fff;border-color:var(--navy);}
+  /* stand-in until real photos land: initials on navy. deliberately not stock art and not
+     an AI-generated face, either of which would read worse than an honest monogram. */
+  .face .mono-i{font-family:var(--cond);font-weight:700;font-size:1.7rem;color:var(--sky);letter-spacing:.03em;}
+  .card .nm{font-family:var(--cond);font-weight:700;font-size:1.2rem;text-transform:uppercase;
+    color:var(--navy);margin-top:var(--s4);letter-spacing:.01em;line-height:1.15;}
+  .card .role{font-family:var(--mono);font-size:.68rem;color:var(--slate);margin-top:var(--s2);
+    letter-spacing:.03em;line-height:1.6;text-transform:uppercase;}
+  /* margin-top:auto bottom-aligns the buttons across the row. Without it, a one-line name
+     (Taylor Gow) and a two-line one (Vicky Vandenberg) push their buttons to different
+     heights and the row falls out of register. */
+  .card .links{margin-top:auto;padding-top:var(--s4);width:100%;display:flex;flex-direction:column;gap:var(--s2);}
+  /* 44px floor on every tap target: a thumb on a phone is the entire use case here */
+  .card a{display:flex;align-items:center;justify-content:center;gap:var(--s2);min-height:44px;
+    padding:var(--s2) var(--s3);border-radius:3px;text-decoration:none;font-family:var(--mono);
+    font-size:.72rem;line-height:1.35;word-break:break-word;transition:background .15s,color .15s;}
+  .card a.mail{background:var(--navy);color:#fff;}
+  .card a.mail:hover,.card a.mail:focus{background:var(--teal);}
+  .card a.vcf{border:1px solid var(--line);color:var(--ink-2);letter-spacing:.06em;text-transform:uppercase;
+    font-size:.64rem;}
+  .card a.vcf:hover,.card a.vcf:focus{background:var(--navy);color:#fff;border-color:var(--navy);}
+  .card a svg{width:14px;height:14px;flex:0 0 auto;}
 
   /* ---------- partners ---------- */
-  .prow{display:flex;gap:var(--s6);align-items:center;flex-wrap:wrap;}
+  /* heights set per-logo for optical balance, not matched mechanically: Duke's mark is a
+     stacked square lockup, so at a shared height its type reads half the size of the two
+     horizontal wordmarks beside it */
+  .prow{display:flex;gap:var(--s6) var(--s7);align-items:center;flex-wrap:wrap;margin-top:var(--s5);}
   .prow img{width:auto;display:block;}
-  .prow img.aminyx{height:2.6rem;}
-  .prow img.viamer{height:2.2rem;}
-  .prow img.duke{height:2.8rem;}
+  .prow img.aminyx{height:3.1rem;}
+  .prow img.viamer{height:2.6rem;}
+  .prow img.duke{height:3.4rem;}
 
-  footer{background:var(--navy);color:var(--sky);padding:var(--s6) 0;margin-top:var(--s6);
-    font-family:var(--mono);font-size:.72rem;line-height:1.7;letter-spacing:.02em;}
-  footer b{color:#fff;font-weight:600;}
+  /* ---------- footer ---------- */
+  footer{background:var(--navy);color:var(--sky);padding:var(--s7) 0;}
+  footer .fin{display:flex;justify-content:space-between;gap:var(--s5);flex-wrap:wrap;align-items:flex-end;}
+  footer .note{font-family:var(--mono);font-size:.72rem;line-height:1.75;letter-spacing:.02em;max-width:34rem;}
+  footer .note b{color:#fff;font-weight:600;display:block;margin-bottom:var(--s2);
+    font-family:var(--cond);font-size:1rem;text-transform:uppercase;letter-spacing:.02em;}
+  footer .tag{font-family:var(--cond);font-weight:700;text-transform:uppercase;color:rgba(205,217,230,.5);
+    font-size:.95rem;letter-spacing:.02em;}
+
+  @media (max-width:34rem){
+    /* vertical only, for the same reason as the base rule above */
+    .hero .in{padding-top:var(--s7);padding-bottom:var(--s6);}
+    section.band{padding:var(--s7) 0;}
+  }
 </style>
 </head>
 <body>
 
-<header>
-  <div class="wrap head-in">
-    <div class="brand"><img src="assets/logo-gray-matter-ops-flat.png" alt="Gray Matter Ops"></div>
-    <div class="prog"><b>X49</b>Duke Design Defense Studio 2026</div>
+<header class="hero">
+  <img class="bg" src="assets/hero.jpg" alt="" aria-hidden="true">
+  <div class="veil"></div>
+  <div class="wrap in">
+    <div class="eyebrow">Gray Matter Ops &middot; Duke Design Defense Studio 2026</div>
+    <h1>Turning survival<br>hours into days.</h1>
+    <p><b>X49</b> is a localized, opioid-free nanofiber designed to be placed in the field, even by a
+       non-medic, and to control pain at the wound for days. It keeps the wounded conscious, mobile,
+       and survivable until evacuation. Developed with <b>Dr. Matthew Becker</b> and
+       <b>Aminyx Therapeutics</b>.</p>
+
+    <nav class="acts">
+      <a class="act primary" href="exec-summary.pdf">
+        <svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"
+             stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+          <polyline points="14 2 14 8 20 8"></polyline>
+        </svg>
+        <span class="tx">Executive summary<small>2-page PDF</small></span>
+      </a>
+      <a class="act" href="#film">
+        <svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"
+             stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <circle cx="12" cy="12" r="10"></circle>
+          <polygon points="10 8 16 12 10 16 10 8" fill="currentColor" stroke="none"></polygon>
+        </svg>
+        <span class="tx">Watch the film<small>90 seconds</small></span>
+      </a>
+      <a class="act" href="vcf/gray-matter-ops.vcf" download>
+        <svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"
+             stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
+          <circle cx="9" cy="7" r="4"></circle>
+          <line x1="19" y1="8" x2="19" y2="14"></line>
+          <line x1="22" y1="11" x2="16" y2="11"></line>
+        </svg>
+        <span class="tx">Save our contacts<small>All four, one tap</small></span>
+      </a>
+    </nav>
   </div>
 </header>
 
-<main class="wrap">
+<main>
 
-  <section class="lede">
-    <div class="eyebrow">Team Contact</div>
-    <h1>Gray Matter&nbsp;Ops</h1>
-    <p>We are the Duke Design Defense Studio team behind <b>X49</b>, a localized, opioid-free
-       nanofiber designed to be placed in the field, even by a non-medic, and to control pain at
-       the wound for days. It keeps the wounded conscious, mobile, and survivable until evacuation.</p>
-    <p>Developed with <b>Dr. Matthew Becker</b> and <b>Aminyx Therapeutics</b>. Reach any of us below.</p>
+  <section class="band" id="film">
+    <div class="wrap">
+      <div class="eyebrow">The film</div>
+      <h2>Ninety seconds on why this matters.</h2>
+      <p class="sub">What happens to a casualty when evacuation is not an hour away, and what a
+         localized, opioid-free analgesic changes about it.</p>
+
+      <div class="film">
+        <div class="film-soon">
+          <div class="ring">
+            <svg viewBox="0 0 24 24" fill="#9FB3C9" aria-hidden="true"><polygon points="5 3 19 12 5 21 5 3"></polygon></svg>
+          </div>
+          <div class="lbl"><span class="ph">Film lands before pitch week</span></div>
+        </div>
+      </div>
+    </div>
   </section>
 
-  <section class="sect">
-    <h2>The team</h2>
-    <ul class="team">
+  <section class="band">
+    <div class="wrap">
+      <img class="crest" src="assets/logo-gray-matter-ops.png" alt="Gray Matter Ops">
+      <h2>The team</h2>
+      <p class="sub">Four Air Force officers running the Duke Design Defense Studio project on X49.
+         Reach any of us directly.</p>
 
-      <li class="card">
-        <div class="face"><span class="initials">V</span></div>
-        <div class="nm">Vicky <span class="ph">[last name]</span></div>
-        <div class="role"><span class="ph">[role]</span><br>U.S. Air Force</div>
-        <a class="mail" href="mailto:"><span class="ph">[email]</span></a>
-      </li>
+      <ul class="team">
 
-      <li class="card">
-        <div class="face"><span class="initials">T</span></div>
-        <div class="nm">Tyler <span class="ph">[last name]</span></div>
-        <div class="role"><span class="ph">[role]</span><br>U.S. Air Force</div>
-        <a class="mail" href="mailto:"><span class="ph">[email]</span></a>
-      </li>
+        <li class="card">
+          <div class="face"><span class="mono-i">V</span></div>
+          <div class="nm">Vicky <span class="ph">[last name]</span></div>
+          <div class="role"><span class="ph">[role]</span><br>U.S. Air Force</div>
+          <div class="links">
+            <a class="mail" href="mailto:"><span class="ph">[email]</span></a>
+            <a class="vcf" href="vcf/vicky.vcf" download>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                   stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+                <polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line>
+              </svg>Save contact</a>
+          </div>
+        </li>
 
-      <li class="card">
-        <div class="face"><span class="initials">J</span></div>
-        <div class="nm">Justin <span class="ph">[last name]</span></div>
-        <div class="role"><span class="ph">[role]</span><br>U.S. Air Force</div>
-        <a class="mail" href="mailto:"><span class="ph">[email]</span></a>
-      </li>
+        <li class="card">
+          <div class="face"><span class="mono-i">T</span></div>
+          <div class="nm">Tyler <span class="ph">[last name]</span></div>
+          <div class="role"><span class="ph">[role]</span><br>U.S. Air Force</div>
+          <div class="links">
+            <a class="mail" href="mailto:"><span class="ph">[email]</span></a>
+            <a class="vcf" href="vcf/tyler.vcf" download>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                   stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+                <polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line>
+              </svg>Save contact</a>
+          </div>
+        </li>
 
-      <li class="card">
-        <div class="face"><span class="initials">T</span></div>
-        <div class="nm">Taylor Gow</div>
-        <div class="role"><span class="ph">[role]</span><br>U.S. Air Force</div>
-        <a class="mail" href="mailto:"><span class="ph">[email]</span></a>
-      </li>
+        <li class="card">
+          <div class="face"><span class="mono-i">J</span></div>
+          <div class="nm">Justin <span class="ph">[last name]</span></div>
+          <div class="role"><span class="ph">[role]</span><br>U.S. Air Force</div>
+          <div class="links">
+            <a class="mail" href="mailto:"><span class="ph">[email]</span></a>
+            <a class="vcf" href="vcf/justin.vcf" download>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                   stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+                <polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line>
+              </svg>Save contact</a>
+          </div>
+        </li>
 
-    </ul>
+        <li class="card">
+          <div class="face"><span class="mono-i">TG</span></div>
+          <div class="nm">Taylor Gow</div>
+          <div class="role"><span class="ph">[role]</span><br>U.S. Air Force</div>
+          <div class="links">
+            <a class="mail" href="mailto:"><span class="ph">[email]</span></a>
+            <a class="vcf" href="vcf/taylor.vcf" download>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                   stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+                <polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line>
+              </svg>Save contact</a>
+          </div>
+        </li>
+
+      </ul>
+    </div>
   </section>
 
-  <section class="sect">
-    <h2>Partners &amp; program sponsors</h2>
-    <div class="prow">
-      <img class="aminyx" src="assets/logo-aminyx.png" alt="Aminyx Therapeutics">
-      <img class="viamer" src="assets/logo-viamer-mark.png" alt="Viamer Biosciences">
-      <img class="duke" src="assets/logo-duke.png" alt="Duke Design Defense Studio">
+  <section class="band">
+    <div class="wrap">
+      <div class="eyebrow">Partners &amp; program sponsors</div>
+      <div class="prow">
+        <img class="aminyx" src="assets/logo-aminyx.png" alt="Aminyx Therapeutics">
+        <img class="viamer" src="assets/logo-viamer.png" alt="Viamer Biosciences">
+        <img class="duke" src="assets/logo-duke.png" alt="Duke Design Defense Studio">
+      </div>
     </div>
   </section>
 
 </main>
 
 <footer>
-  <div class="wrap">
-    <b>Gray Matter Ops</b>
-    X49 is pre-human-trial. Figures shown in our materials describe intended capability
-    and early live-tissue results, not approved clinical performance.
+  <div class="wrap fin">
+    <div class="note">
+      <b>Where X49 actually stands</b>
+      X49 is pre-human-trial. Figures in our materials describe intended capability and early
+      live-tissue results, not approved clinical performance. Funded by the U.S. Department of
+      Defense through the CDMRP Peer Reviewed Medical Research Program.
+    </div>
+    <div class="tag">Gray Matter Ops</div>
   </div>
 </footer>
 
