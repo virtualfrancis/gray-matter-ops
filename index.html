@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Gray Matter Ops &middot; Team Contact</title>
+<meta name="description" content="Gray Matter Ops: the team behind X49, an opioid-free localized analgesic nanofiber. Duke Design Defense Studio 2026.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600;700&family=IBM+Plex+Sans+Condensed:wght@600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  /* palette + type carried over from the executive summary so the scanned page
+     reads as the same document the reader is holding */
+  :root{
+    --navy:#0B2545;
+    --navy-deep:#081A33;
+    --bone:#F2EFE7;
+    --paper:#FBFAF6;
+    --ink:#1A1A1A;
+    --ink-2:#3A434C;
+    --slate:#5C6770;
+    --line:#D8D3C8;
+    --line-2:#E6E2D8;
+    --mist:#9FB3C9;
+    --sky:#CDD9E6;
+
+    --s1:4px; --s2:8px; --s3:12px; --s4:16px; --s5:24px; --s6:32px; --s7:48px;
+
+    --cond:"IBM Plex Sans Condensed","IBM Plex Sans",system-ui,sans-serif;
+    --sans:"IBM Plex Sans",system-ui,-apple-system,Segoe UI,Helvetica,Arial,sans-serif;
+    --mono:"IBM Plex Mono",ui-monospace,"SF Mono",Menlo,Consolas,monospace;
+  }
+  *{box-sizing:border-box;}
+  body{margin:0;background:var(--bone);color:var(--ink);font-family:var(--sans);
+    -webkit-font-smoothing:antialiased;}
+
+  /* placeholder marker: deliberately off-palette so unfilled fields are impossible
+     to miss. delete .ph (and this rule) once the real details land. */
+  .ph{background:#FFF3BF;border-bottom:1px dashed #b59b00;padding:0 3px;border-radius:2px;}
+
+  .wrap{max-width:56rem;margin:0 auto;padding:0 var(--s5);}
+
+  /* ---------- masthead ---------- */
+  header{background:var(--navy);color:#fff;padding:var(--s5) 0;}
+  .head-in{display:flex;align-items:center;justify-content:space-between;gap:var(--s4);flex-wrap:wrap;}
+  .brand img{height:2.6rem;width:auto;display:block;}
+  .prog{font-family:var(--mono);font-size:.72rem;line-height:1.6;letter-spacing:.04em;
+    color:var(--sky);text-align:right;}
+  .prog b{color:#fff;font-weight:600;display:block;}
+
+  /* ---------- lede ---------- */
+  .lede{padding:var(--s7) 0 var(--s6);}
+  .eyebrow{font-family:var(--mono);font-size:.7rem;letter-spacing:.12em;text-transform:uppercase;
+    color:var(--slate);font-weight:600;}
+  h1{font-family:var(--cond);font-weight:700;font-size:clamp(2rem,7vw,3rem);line-height:1.02;
+    text-transform:uppercase;color:var(--navy);letter-spacing:-.01em;margin:var(--s3) 0 0;}
+  .lede p{max-width:40rem;margin:var(--s4) 0 0;font-size:1rem;line-height:1.6;color:var(--ink-2);}
+
+  /* ---------- team ---------- */
+  .sect{border-top:1px solid var(--line);padding:var(--s6) 0;}
+  h2{font-family:var(--cond);font-weight:700;font-size:1.25rem;text-transform:uppercase;
+    color:var(--navy);margin:0 0 var(--s5);letter-spacing:.01em;}
+
+  .team{display:grid;grid-template-columns:repeat(auto-fit,minmax(15rem,1fr));gap:var(--s4);
+    list-style:none;margin:0;padding:0;}
+  .card{background:var(--paper);border:1px solid var(--line-2);border-radius:4px;padding:var(--s5);
+    display:flex;flex-direction:column;align-items:center;text-align:center;}
+  .face{width:5.5rem;height:5.5rem;border-radius:50%;overflow:hidden;background:var(--navy-deep);
+    display:flex;align-items:center;justify-content:center;flex:0 0 auto;}
+  .face img{width:100%;height:100%;object-fit:cover;display:block;}
+  /* placeholder avatar: initials on navy, no stock art, no AI faces */
+  .face .initials{font-family:var(--cond);font-weight:700;font-size:1.6rem;color:var(--mist);
+    letter-spacing:.02em;}
+  .card .nm{font-family:var(--cond);font-weight:700;font-size:1.15rem;text-transform:uppercase;
+    color:var(--navy);margin-top:var(--s4);letter-spacing:.01em;}
+  .card .role{font-family:var(--mono);font-size:.72rem;color:var(--slate);margin-top:var(--s1);
+    letter-spacing:.02em;line-height:1.5;}
+  /* 44px minimum tap target: this is the whole point of the page on a phone */
+  .card a.mail{display:flex;align-items:center;justify-content:center;min-height:44px;width:100%;
+    margin-top:var(--s4);padding:var(--s2) var(--s3);border:1px solid var(--line);border-radius:3px;
+    font-family:var(--mono);font-size:.75rem;color:var(--navy);text-decoration:none;
+    word-break:break-all;line-height:1.4;background:var(--bone);}
+  .card a.mail:hover,.card a.mail:focus{background:var(--navy);color:#fff;border-color:var(--navy);}
+
+  /* ---------- partners ---------- */
+  .prow{display:flex;gap:var(--s6);align-items:center;flex-wrap:wrap;}
+  .prow img{width:auto;display:block;}
+  .prow img.aminyx{height:2.6rem;}
+  .prow img.viamer{height:2.2rem;}
+  .prow img.duke{height:2.8rem;}
+
+  footer{background:var(--navy);color:var(--sky);padding:var(--s6) 0;margin-top:var(--s6);
+    font-family:var(--mono);font-size:.72rem;line-height:1.7;letter-spacing:.02em;}
+  footer b{color:#fff;font-weight:600;}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap head-in">
+    <div class="brand"><img src="assets/logo-gray-matter-ops-flat.png" alt="Gray Matter Ops"></div>
+    <div class="prog"><b>X49</b>Duke Design Defense Studio 2026</div>
+  </div>
+</header>
+
+<main class="wrap">
+
+  <section class="lede">
+    <div class="eyebrow">Team Contact</div>
+    <h1>Gray Matter&nbsp;Ops</h1>
+    <p>We are the Duke Design Defense Studio team behind <b>X49</b>, a localized, opioid-free
+       nanofiber designed to be placed in the field, even by a non-medic, and to control pain at
+       the wound for days. It keeps the wounded conscious, mobile, and survivable until evacuation.</p>
+    <p>Developed with <b>Dr. Matthew Becker</b> and <b>Aminyx Therapeutics</b>. Reach any of us below.</p>
+  </section>
+
+  <section class="sect">
+    <h2>The team</h2>
+    <ul class="team">
+
+      <li class="card">
+        <div class="face"><span class="initials">V</span></div>
+        <div class="nm">Vicky <span class="ph">[last name]</span></div>
+        <div class="role"><span class="ph">[role]</span><br>U.S. Air Force</div>
+        <a class="mail" href="mailto:"><span class="ph">[email]</span></a>
+      </li>
+
+      <li class="card">
+        <div class="face"><span class="initials">T</span></div>
+        <div class="nm">Tyler <span class="ph">[last name]</span></div>
+        <div class="role"><span class="ph">[role]</span><br>U.S. Air Force</div>
+        <a class="mail" href="mailto:"><span class="ph">[email]</span></a>
+      </li>
+
+      <li class="card">
+        <div class="face"><span class="initials">J</span></div>
+        <div class="nm">Justin <span class="ph">[last name]</span></div>
+        <div class="role"><span class="ph">[role]</span><br>U.S. Air Force</div>
+        <a class="mail" href="mailto:"><span class="ph">[email]</span></a>
+      </li>
+
+      <li class="card">
+        <div class="face"><span class="initials">T</span></div>
+        <div class="nm">Taylor Gow</div>
+        <div class="role"><span class="ph">[role]</span><br>U.S. Air Force</div>
+        <a class="mail" href="mailto:"><span class="ph">[email]</span></a>
+      </li>
+
+    </ul>
+  </section>
+
+  <section class="sect">
+    <h2>Partners &amp; program sponsors</h2>
+    <div class="prow">
+      <img class="aminyx" src="assets/logo-aminyx.png" alt="Aminyx Therapeutics">
+      <img class="viamer" src="assets/logo-viamer-mark.png" alt="Viamer Biosciences">
+      <img class="duke" src="assets/logo-duke.png" alt="Duke Design Defense Studio">
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <div class="wrap">
+    <b>Gray Matter Ops</b>
+    X49 is pre-human-trial. Figures shown in our materials describe intended capability
+    and early live-tissue results, not approved clinical performance.
+  </div>
+</footer>
+
+</body>
+</html>
